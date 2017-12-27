@@ -8,9 +8,9 @@ import json
 
 
 def check_input(string,max_num):
-'''
-Check input number is correct or not.
-'''
+    '''
+    Check input number is correct or not.
+    '''
     while True:
         if string.isdigit() and string <= str(max_num):
             return int(string)
@@ -18,9 +18,9 @@ Check input number is correct or not.
             string = raw_input("\nPlease input correct number:\n\n$>")
 
 def align(data):
-'''
-Pretty the print form.
-'''
+    '''
+    Pretty the print form.
+    '''
     for i in data:
         if i["name"]:
             if len(i["name"]) < 30:
@@ -41,9 +41,9 @@ Pretty the print form.
     return data
 
 def mode_print(method,mode,data):
-'''
-Different mode different print.
-'''
+    '''
+    Different mode different print.
+    '''
     data = align(data)
     if method == "dns":
         print "\n######################################################################################\n"
@@ -80,9 +80,9 @@ Different mode different print.
                 print " ---------------------------------------------------------------------------------------------------------------------------"
 
 def Search(Token,Method,FilterString):
-'''
-Choose different mode to get data.
-'''
+    '''
+    Choose different mode to get data.
+    '''
     try:
         url = "http://api.ceye.io/v1/records?token=" + Token + "&type=" + Method + "&filter=" + FilterString
         req = urllib2.urlopen(url)
@@ -106,9 +106,9 @@ Choose different mode to get data.
         print e
         
 def main(Token):
-'''
-Choose different method and do search.
-'''
+    '''
+    Choose different method and do search.
+    '''
     while True:
         flag = True
         num = raw_input("\nPlease input Method number:\n 1 ----> dns\n 2 ----> request\n 3 ----> Exit\n\n$>")
